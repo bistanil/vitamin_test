@@ -1,0 +1,36 @@
+<h1>Vitamin Report</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Vitamin c</th>
+      <th>Vitamin d3</th>
+      <th>Iron</th>
+      <th>Activity vita c</th>
+      <th>Activity vita d3</th>
+      <th>Activity iron</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if @vitamin_store %>
+      <tr>
+        <td><%= @vitamin_store.day %></td>
+        <td><%= @vitamin_store.vita_c %></td>
+        <td><%= @vitamin_store.vita_d3 %></td>
+        <td><%= @vitamin_store.vita_iron %></td>
+        <td><%= @vitamin_store.acti_vita_c %></td>
+        <td><%= @vitamin_store.acti_vita_d3 %></td>
+        <td><%= @vitamin_store.acti_vita_iron %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<h1><%= "Vitamin c #{10 - (@vitamin_store.vita_c.to_f - @vitamin_store.acti_vita_c.to_f) } (current level is #{@vitamin_store.vita_c.to_f} - #{@vitamin_store.acti_vita_c.to_f} = #{@vitamin_store.vita_c.to_f - @vitamin_store.acti_vita_c.to_f})" %></h1>
+</br>
+<h1><%= "Vitamin d3 #{10 - (@vitamin_store.vita_d3.to_f - @vitamin_store.acti_vita_d3.to_f) } (current level is #{@vitamin_store.vita_d3.to_f} - #{@vitamin_store.acti_vita_d3.to_f} = #{@vitamin_store.vita_d3.to_f - @vitamin_store.acti_vita_d3.to_f})" %></h1>
+</br>
+<h1><%= "Iron #{10 - (@vitamin_store.vita_iron.to_f - @vitamin_store.acti_vita_iron.to_f) } (current level is #{@vitamin_store.vita_iron.to_f} - #{@vitamin_store.acti_vita_iron.to_f} = #{@vitamin_store.vita_iron.to_f - @vitamin_store.acti_vita_iron.to_f})" %></h1>

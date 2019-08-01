@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  day: MyString
+  vita_c: MyString
+  vita_d3: MyString
+  vita_iron: MyString
+  acti_vita_c: MyString
+  acti_vita_d3: MyString
+  acti_vita_iron: MyString
+
+two:
+  day: MyString
+  vita_c: MyString
+  vita_d3: MyString
+  vita_iron: MyString
+  acti_vita_c: MyString
+  acti_vita_d3: MyString
+  acti_vita_iron: MyString

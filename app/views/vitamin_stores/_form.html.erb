@@ -1,0 +1,54 @@
+<%= form_with(model: vitamin_store, local: true) do |form| %>
+  <% if vitamin_store.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vitamin_store.errors.count, "error") %> prohibited this vitamin_store from being saved:</h2>
+
+      <ul>
+      <% vitamin_store.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :day %>
+    <%#= form.text_field :day %>
+    <%= form.select :day, VitaminStore::DAYS, { :include_blank => 'Select' },  
+        :required => true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vita_c %>
+    <%= form.text_field :vita_c %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vita_d3 %>
+    <%= form.text_field :vita_d3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vita_iron %>
+    <%= form.text_field :vita_iron %>
+  </div>
+
+  <div class="field">
+    <%= form.label :acti_vita_c %>
+    <%= form.text_field :acti_vita_c %>
+  </div>
+
+  <div class="field">
+    <%= form.label :acti_vita_d3 %>
+    <%= form.text_field :acti_vita_d3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :acti_vita_iron %>
+    <%= form.text_field :acti_vita_iron %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

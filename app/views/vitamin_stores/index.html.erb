@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vitamin Stores</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Vita c</th>
+      <th>Vita d3</th>
+      <th>Vita iron</th>
+      <th>Acti vita c</th>
+      <th>Acti vita d3</th>
+      <th>Acti vita iron</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vitamin_stores.each do |vitamin_store| %>
+      <tr>
+        <td><%= vitamin_store.day %></td>
+        <td><%= vitamin_store.vita_c %></td>
+        <td><%= vitamin_store.vita_d3 %></td>
+        <td><%= vitamin_store.vita_iron %></td>
+        <td><%= vitamin_store.acti_vita_c %></td>
+        <td><%= vitamin_store.acti_vita_d3 %></td>
+        <td><%= vitamin_store.acti_vita_iron %></td>
+        <td><%= link_to 'Show', vitamin_store %></td>
+        <td><%= link_to 'Edit', edit_vitamin_store_path(vitamin_store) %></td>
+        <td><%= link_to 'Report',report_path(vitamin_store.id)%></td>
+        <td><%= link_to 'Destroy', vitamin_store, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vitamin Store', new_vitamin_store_path %>
